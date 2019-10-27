@@ -21,6 +21,10 @@ import RackList from './component/Admin/shelves/container/list';
 import RackForm from './component/Admin/shelves/container/form';
 import RackDelete from './component/Admin/shelves/container/delete';
 
+import CategoryList from './component/Admin/categories/container/list';
+import CategoryForm from './component/Admin/categories/container/form';
+import CategoryDelete from './component/Admin/categories/container/delete';
+
 function App() {
   return (
     <Router>
@@ -39,10 +43,13 @@ function App() {
           <Route exact path="/pasillos/:id" component={CellarForm} />
           <Route exact path="/pasillos/delete/:id" component={CellarDelete} />
 
-
           <Route exact path="/estanterias" component={RackList} />
           <Route exact path="/estanterias/:id" component={RackForm} />
           <Route exact path="/estanterias/delete/:id" component={RackDelete} />
+
+          <Route exact path="/categorias" component={CategoryList} />
+          <Route exact path="/categorias/:id" component={CategoryForm} />
+          <Route exact path="/categorias/delete/:id" component={CategoryDelete} />
 
         </Switch>
       </div>
