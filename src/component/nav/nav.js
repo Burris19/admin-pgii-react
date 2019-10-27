@@ -8,10 +8,7 @@ const Navbar = () => {
                 <Nav.Link href="/bodegas">Bodegas</Nav.Link>
             </Nav.Item>
             <Nav.Item>
-                <Nav.Link eventKey="link-1">Loooonger NavLink</Nav.Link>
-            </Nav.Item>
-            <Nav.Item>
-                <Nav.Link eventKey="link-2">Link</Nav.Link>
+                <Nav.Link href="/pasillos">Pasillos</Nav.Link>
             </Nav.Item>
         </Nav>
     )
