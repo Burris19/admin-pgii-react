@@ -17,6 +17,10 @@ import CellarList from './component/Admin/hallways/container/list';
 import CellarForm from './component/Admin/hallways/container/form';
 import CellarDelete from './component/Admin/hallways/container/delete';
 
+import RackList from './component/Admin/shelves/container/list';
+import RackForm from './component/Admin/shelves/container/form';
+import RackDelete from './component/Admin/shelves/container/delete';
+
 function App() {
   return (
     <Router>
@@ -34,6 +38,11 @@ function App() {
           <Route exact path="/pasillos" component={CellarList} />
           <Route exact path="/pasillos/:id" component={CellarForm} />
           <Route exact path="/pasillos/delete/:id" component={CellarDelete} />
+
+
+          <Route exact path="/estanterias" component={RackList} />
+          <Route exact path="/estanterias/:id" component={RackForm} />
+          <Route exact path="/estanterias/delete/:id" component={RackDelete} />
 
         </Switch>
       </div>
