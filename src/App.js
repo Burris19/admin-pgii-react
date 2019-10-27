@@ -8,6 +8,7 @@ import {
 import './App.css';
 import Home from './component/Admin/home'
 import WineList from './component/Admin/wineries/container/list';
+import WineForm from './component/Admin/wineries/container/form';
 
 function App() {
   return (
@@ -19,8 +20,7 @@ function App() {
           </Route>
           <Route path="/home" component={Home} />
           <Route exact path="/bodegas" component={WineList} />
-          {/* <Route exact path="/bodegas/:id" component={UserForm} />
-          <Route exact path="/bodegas/delete/:id" component={UserDelete} /> */}
+          <Route exact path="/bodegas/:id" component={WineForm} />
 
         </Switch>
       </div>

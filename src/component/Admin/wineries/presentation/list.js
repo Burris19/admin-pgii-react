@@ -24,12 +24,12 @@ const LayoutWineList = (props) => {
                     <td>
                         <Link
                             className="btn btn-info btn-sm mr-2"
-                            to={`/admin/user/${id}`}>
+                            to={`/bodegas/${id}`}>
                             Editar
                         </Link>
                         <Link
                             className="btn btn-danger btn-sm"
-                            to={`/admin/user/delete/${id}`}>
+                            to={`/bodegas/delete/${id}`}>
                             Eliminar
                         </Link>
                     </td>
@@ -48,7 +48,7 @@ const LayoutWineList = (props) => {
                     <div className="col-md-6 col-sm-6 text-right py-2">
                         <Link
                             className="btn btn-primary"
-                            to='/admin/user/new'>
+                            to='/bodegas/new'>
                             Nueva Bodega
                             </Link>
                     </div>
