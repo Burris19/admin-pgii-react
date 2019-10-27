@@ -2,7 +2,14 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import AdminLayout from '../../adminLayout'
 
+import LoadingButton from '../../../shares/loading-button';
+import {
+    _isDisabled,
+    _classButton
+} from '../../../../helper';
+
 const LayoutWineForm = ({
+    loadingButton,
     submitted,
     handlerSubmit,
     handlChange,
@@ -24,7 +31,8 @@ const LayoutWineForm = ({
                         value={name}
                         className="form-control"
                         id="name"
-                        required />
+                        required
+                        disabled={_isDisabled(actionTitle)} />
                     <div className="invalid-feedback">
                         Nombre es requerido.
                     </div>
@@ -38,7 +46,8 @@ const LayoutWineForm = ({
                         value={code}
                         className="form-control"
                         id="code"
-                        required />
+                        required
+                        disabled={_isDisabled(actionTitle)} />
                     <div className="invalid-feedback">
                         Codigo es requerido.
                     </div>
@@ -54,7 +63,8 @@ const LayoutWineForm = ({
                         value={phone}
                         className="form-control"
                         id="phone"
-                        required />
+                        required
+                        disabled={_isDisabled(actionTitle)} />
                     <div className="invalid-feedback">
                         Telefono es requerido.
                     </div>
@@ -67,13 +77,19 @@ const LayoutWineForm = ({
                         value={address}
                         className="form-control"
                         id="address"
-                        required />
+                        required
+                        disabled={_isDisabled(actionTitle)} />
                     <div className="invalid-feedback">
                         Direccion es requerida.
                     </div>
                 </div>
             </div>
-            <button type="submit" className="btn btn-primary">{actionTitle} Bodega</button>
+            {
+                loadingButton ?
+                    <LoadingButton
+                        classButton={_classButton(actionTitle)} /> :
+                    <button className={_classButton(actionTitle)}>{actionTitle} Bodega</button>
+            }
         </form>
     )
 
@@ -98,9 +114,6 @@ const LayoutWineForm = ({
             </div>
         </div>
     )
-
-
-
 }
 
 export default AdminLayout(LayoutWineForm)

@@ -73,6 +73,7 @@ export class WineForm extends Component {
             phone
         }
         if (_isFormValid(data)) {
+            this.setState({ loadingButton: true })
             if (isEdit) {
                 const { id } = this.props.match.params;
                 this._editRegister(data, id);
@@ -107,6 +108,7 @@ export class WineForm extends Component {
     }
 
     _showMessages = (response, isDelete = false) => {
+        this.setState({ loadingButton: false });
         const {
             alertTitle,
             actionTitle
