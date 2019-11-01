@@ -16,6 +16,9 @@ const Navbar = () => {
             <Nav.Item>
                 <Nav.Link href="/categorias">Categorias</Nav.Link>
             </Nav.Item>
+            <Nav.Item>
+                <Nav.Link href="/cardex">Cardex</Nav.Link>
+            </Nav.Item>
         </Nav>
     )
 }
