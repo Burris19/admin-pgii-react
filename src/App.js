@@ -27,6 +27,8 @@ import CategoryDelete from './component/Admin/categories/container/delete';
 
 import ImputOutputProductsForm from './component/Admin/imputOutputProductsForm/container/form';
 
+import StockList from './component/Admin/stock/container/form'
+
 function App() {
   return (
     <Router>
@@ -54,6 +56,7 @@ function App() {
           <Route exact path="/categorias/delete/:id" component={CategoryDelete} />
 
           <Route exact path="/imput/output" component={ImputOutputProductsForm} />
+          <Route exact path="/stock" component={StockList} />
 
         </Switch>
       </div>
