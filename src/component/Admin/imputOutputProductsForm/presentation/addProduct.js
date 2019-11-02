@@ -7,7 +7,6 @@ import {
 
 const AddProduct = (props) => {
     return (
-
         <div className="card">
             <div className="card-header">
                 Ingreso de Producto
@@ -22,14 +21,18 @@ const AddProduct = (props) => {
                             onChange={props.handlChange}
                             className="form-control"
                             required>
-                            {_renderDefaultOptions('Seleccione una opcion')}
+                            {_renderDefaultOptions('Seleccione una opcion', 'empty')}
                             {_renderDefaultOptions('Nuevo Producto', 'newProduct')}
-                            {_renderOptions(props.products)}
+                            {_renderOptions(props.register)}
                         </select>
                         <div className="invalid-feedback">
                             Debe Seleccionar una opcion.
-                </div>
+                        </div>
                     </div>
+                </div>
+
+
+                <div className="form-row">
                     <div className="form-group col-md-6">
                         <label htmlFor="codeProductEntrada">Codigo de Producto</label>
                         <input
@@ -41,37 +44,53 @@ const AddProduct = (props) => {
                             required />
                         <div className="invalid-feedback">
                             Codigo es requerido.
+                        </div>
                     </div>
-                    </div>
-                </div>
-                <div className="form-row">
+
                     <div className="form-group col-md-6">
-                        <label htmlFor="descriptionProductEntrada">Descripcion</label>
+                        <label htmlFor="nameProductEntrada">Nombre de Producto</label>
                         <input
                             onChange={props.handlChange}
                             type="text"
-                            value={props.descriptionProductEntrada}
+                            value={props.nameProductEntrada}
                             className="form-control"
-                            id="descriptionProductEntrada"
+                            id="nameProductEntrada"
                             required />
                         <div className="invalid-feedback">
-                            Descripcion es requerida.
+                            Nombre es requerido.
+                        </div>
                     </div>
-                    </div>
+                </div>
+
+                <div className="form-row">
                     <div className="form-group col-md-6">
-                        <label htmlFor="costProducEntrada">Precio</label>
+                        <label htmlFor="priceProducEntrada">Precio Costo</label>
                         <input
                             onChange={props.handlChange}
                             type="number"
-                            value={props.costProducEntrada}
+                            value={props.priceProducEntrada}
                             className="form-control"
-                            id="costProducEntrada"
+                            id="priceProducEntrada"
                             required />
                         <div className="invalid-feedback">
-                            Descripcion es requerida.
+                            Precio Costo es requerido.
+                        </div>
                     </div>
+                    <div className="form-group col-md-6">
+                        <label htmlFor="priceSaleEntrada">Precio Venta</label>
+                        <input
+                            onChange={props.handlChange}
+                            type="number"
+                            value={props.priceSaleEntrada}
+                            className="form-control"
+                            id="priceSaleEntrada"
+                            required />
+                        <div className="invalid-feedback">
+                            Precio Venta es requerido.
+                        </div>
                     </div>
                 </div>
+
                 <div className="form-row">
                     <div className="form-group col-md-6">
                         <label htmlFor="idCategoryEntrada">Selecciona un producto</label>
@@ -92,7 +111,7 @@ const AddProduct = (props) => {
                         <label htmlFor="amountProduct">Cantidad a Registrar</label>
                         <input
                             onChange={props.handlChange}
-                            type="text"
+                            type="number"
                             value={props.amountProduct}
                             className="form-control"
                             id="amountProduct"

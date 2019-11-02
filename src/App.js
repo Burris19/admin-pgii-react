@@ -25,7 +25,7 @@ import CategoryList from './component/Admin/categories/container/list';
 import CategoryForm from './component/Admin/categories/container/form';
 import CategoryDelete from './component/Admin/categories/container/delete';
 
-import CardexForm from './component/Admin/cardex/container/form';
+import ImputOutputProductsForm from './component/Admin/imputOutputProductsForm/container/form';
 
 function App() {
   return (
@@ -53,7 +53,7 @@ function App() {
           <Route exact path="/categorias/:id" component={CategoryForm} />
           <Route exact path="/categorias/delete/:id" component={CategoryDelete} />
 
-          <Route exact path="/cardex" component={CardexForm} />
+          <Route exact path="/imput/output" component={ImputOutputProductsForm} />
 
         </Switch>
       </div>

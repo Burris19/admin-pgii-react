@@ -9,12 +9,14 @@ export class CardexForm extends Component {
     constructor(props) {
         super(props)
         this.state = {
+            nameProductEntrada: '',
             amountProduct: '',
             idCategoryEntrada: '',
             idProductEntrada: '',
             codeProductEntrada: '',
-            descriptionProductEntrada: '',
-            costProducEntrada: '',
+            descriptionProductEntrada: 'Nuevo Producto',
+            priceProducEntrada: '',
+            priceSaleEntrada: '',
             showCellarFrom: false,
             cellar_to_id: '',
             cellar_from_id: '',
@@ -201,6 +203,33 @@ export class CardexForm extends Component {
         if (id === 'idHallSelected') {
             this._getAllRackByHallFromId(value)
         }
+
+        if (id === 'idProductEntrada') {
+            if (value !== 'newProduct' && value !== 'empty') {
+                const findProduct = this.state.allProducts.filter(({ id }) => id === parseInt(value))
+
+                if (findProduct.length > 0) {
+                    const product = findProduct[0];
+                    this.setState({
+                        codeProductEntrada: product.code,
+                        idCategoryEntrada: product.category_id,
+                        nameProductEntrada: product.name,
+                        priceProducEntrada: product.cost_price,
+                        priceSaleEntrada: product.sale_price
+
+                    })
+                } else {
+                    this.setState({
+                        codeProductEntrada: '',
+                        priceProducEntrada: '',
+                        priceSaleEntrada: '',
+                        idCategoryEntrada: '',
+                        nameProductEntrada: ''
+                    })
+                }
+            }
+        }
+
     }
 
     _handlerSubmit = (e) => {
@@ -234,7 +263,7 @@ export class CardexForm extends Component {
             }
         }
 
-        if (action === 'SALIDA' && type === 'BODEGA') {
+        if (type === 'BODEGA') {
             //Salida de productos entre bodegas 
             data['products'] = selectedProducts
             data['cellar_from_id'] = cellar_from_id
@@ -246,6 +275,40 @@ export class CardexForm extends Component {
                 this._sendTranssaction(data)
                     .then(response => this._showMessages(response));
             }
+        }
+
+        if (action === 'ENTRADA' && type !== 'BODEGA') {
+            const {
+                codeProductEntrada,
+                priceProducEntrada,
+                priceSaleEntrada,
+                idCategoryEntrada,
+                nameProductEntrada,
+                amountProduct
+            } = this.state
+
+            const product = {
+                code: codeProductEntrada,
+                description: 'Nuevo Producto',
+                cost_price: priceProducEntrada,
+                sale_price: priceSaleEntrada,
+                category_id: idCategoryEntrada,
+                name: nameProductEntrada,
+            }
+
+            data['amountProduct'] = amountProduct
+            data['products'] = [product]
+            data['rack_id'] = idRackSelected
+            data['cellar_to_id'] = cellar_from_id
+
+            if (_isFormValid(data)) {
+                this.setState({
+                    loadingButton: true
+                })
+                this._sendTranssaction(data)
+                    .then(response => this._showMessages(response));
+            }
+
         }
     }
 
@@ -276,6 +339,9 @@ export class CardexForm extends Component {
 
     _clearInputs = () => {
         this.setState({
+            priceProducEntrada: '',
+            priceSaleEntrada: '',
+            nameProductEntrada: '',
             amountProduct: '',
             idCategoryEntrada: '',
             idProductEntrada: '',
