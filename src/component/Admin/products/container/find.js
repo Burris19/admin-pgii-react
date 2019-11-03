@@ -1,11 +1,7 @@
 import React, { Component } from 'react';
 
 import {
-    _actionForm,
-    _alertTitle,
-    _isEdit,
-    _isFormValid,
-    _showAlert,
+    _isFormValid
 } from '../../../../helper';
 
 import LayoutFindProduct from '../presentation/find'
