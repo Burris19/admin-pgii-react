@@ -29,13 +29,15 @@ import ImputOutputProductsForm from './component/Admin/imputOutputProductsForm/c
 
 import StockList from './component/Admin/stock/container/form'
 
+import FindProduct from './component/Admin/products/container/find'
+
 function App() {
   return (
     <Router>
       <div className="App">
         <Switch>
           <Route exact path="/">
-            <Redirect to="/home" />
+            <Redirect to="/find/product" />
           </Route>
           <Route path="/home" component={Home} />
 
@@ -57,6 +59,7 @@ function App() {
 
           <Route exact path="/imput/output" component={ImputOutputProductsForm} />
           <Route exact path="/stock" component={StockList} />
+          <Route exact path="/find/product" component={FindProduct} />
 
         </Switch>
       </div>

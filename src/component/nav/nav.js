@@ -17,10 +17,13 @@ const Navbar = () => {
                 <Nav.Link href="/categorias">Categorias</Nav.Link>
             </Nav.Item>
             <Nav.Item>
-                <Nav.Link href="/imput/output">Movimiento de productos</Nav.Link>
+                <Nav.Link href="/imput/output">Entradas/Salidas</Nav.Link>
             </Nav.Item>
             <Nav.Item>
                 <Nav.Link href="/stock">Stock Productos</Nav.Link>
+            </Nav.Item>
+            <Nav.Item>
+                <Nav.Link href="/find/product">Buscar Productos</Nav.Link>
             </Nav.Item>
         </Nav>
     )
