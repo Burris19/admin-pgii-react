@@ -40,7 +40,7 @@ export class CellarDelete extends Component {
     }
 
     _getRegisterById = (id) => {
-        const url = `http://pgii.test/apiv1/shelves/${id}`;
+        const url = `http://34.216.203.194/apiv1/shelves/${id}`;
         return fetch(url, {
             method: 'GET',
             headers: {
@@ -54,7 +54,7 @@ export class CellarDelete extends Component {
     }
 
     _getWineries = () => {
-        const url = 'http://pgii.test/apiv1/wineries';
+        const url = 'http://34.216.203.194/apiv1/wineries';
         return fetch(url, {
             method: 'GET',
             headers: {
@@ -103,7 +103,7 @@ export class CellarDelete extends Component {
     }
 
     _deleteRegister(id) {
-        const url = `http://pgii.test/apiv1/shelves/${id}`;
+        const url = `http://34.216.203.194/apiv1/shelves/${id}`;
         fetch(url, {
             method: 'DELETE',
             headers: {

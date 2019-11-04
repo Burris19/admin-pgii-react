@@ -43,7 +43,7 @@ export class WineForm extends Component {
     }
 
     _getRegisterById = (id) => {
-        const url = `http://pgii.test/apiv1/wineries/${id}`;
+        const url = `http://34.216.203.194/apiv1/wineries/${id}`;
         fetch(url, {
             method: 'GET',
             headers: {
@@ -84,7 +84,7 @@ export class WineForm extends Component {
     }
 
     _saveRegiser(data) {
-        const url = 'http://pgii.test/apiv1/wineries';
+        const url = 'http://34.216.203.194/apiv1/wineries';
         fetch(url, {
             method: 'POST',
             body: JSON.stringify(data),
@@ -96,7 +96,7 @@ export class WineForm extends Component {
     }
 
     _editRegister(data, register_id) {
-        const url = `http://pgii.test/apiv1/wineries/${register_id}`;
+        const url = `http://34.216.203.194/apiv1/wineries/${register_id}`;
         fetch(url, {
             method: 'PUT',
             body: JSON.stringify(data),

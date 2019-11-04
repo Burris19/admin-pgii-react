@@ -75,7 +75,7 @@ export class CardexForm extends Component {
     }
 
     _getAllRackByHallFromId = (id) => {
-        const url = `http://pgii.test/apiv1/shelves/hall/${id}`;
+        const url = `http://34.216.203.194/apiv1/shelves/hall/${id}`;
         fetch(url, {
             method: 'GET',
             headers: {
@@ -90,7 +90,7 @@ export class CardexForm extends Component {
     }
 
     _getAllHallByCellarFromId = (id) => {
-        const url = `http://pgii.test/apiv1/hallways/cellar/${id}`;
+        const url = `http://34.216.203.194/apiv1/hallways/cellar/${id}`;
         fetch(url, {
             method: 'GET',
             headers: {
@@ -105,7 +105,7 @@ export class CardexForm extends Component {
     }
 
     _getAllCategories = () => {
-        const url = 'http://pgii.test/apiv1/categories';
+        const url = 'http://34.216.203.194/apiv1/categories';
         fetch(url, {
             method: 'GET',
             headers: {
@@ -120,7 +120,7 @@ export class CardexForm extends Component {
     }
 
     _getWineries = () => {
-        const url = 'http://pgii.test/apiv1/wineries';
+        const url = 'http://34.216.203.194/apiv1/wineries';
         fetch(url, {
             method: 'GET',
             headers: {
@@ -135,7 +135,7 @@ export class CardexForm extends Component {
     }
 
     _getAllProducts = () => {
-        const url = 'http://pgii.test/apiv1/products';
+        const url = 'http://34.216.203.194/apiv1/products';
         fetch(url, {
             method: 'GET',
             headers: {
@@ -151,7 +151,7 @@ export class CardexForm extends Component {
     }
 
     _getProductsByCellar = (idCellar) => {
-        const url = `http://pgii.test/apiv1/products/cellar/${idCellar}`;
+        const url = `http://34.216.203.194/apiv1/products/cellar/${idCellar}`;
         fetch(url, {
             method: 'GET',
             headers: {
@@ -313,7 +313,7 @@ export class CardexForm extends Component {
     }
 
     _sendTranssaction = (data) => {
-        const url = 'http://pgii.test/apiv1/cardex/product';
+        const url = 'http://34.216.203.194/apiv1/cardex/product';
         return fetch(url, {
             method: 'POST',
             body: JSON.stringify(data),

@@ -12,7 +12,7 @@ export class CellarList extends Component {
     }
 
     componentDidMount() {
-        const url = 'http://pgii.test/apiv1/hallways';
+        const url = 'http://34.216.203.194/apiv1/hallways';
         fetch(url, {
             method: 'GET',
             headers: {

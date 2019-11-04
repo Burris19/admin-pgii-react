@@ -40,7 +40,7 @@ export class CategoryForm extends Component {
     }
 
     _getRegisterById = (id) => {
-        const url = `http://pgii.test/apiv1/categories/${id}`;
+        const url = `http://34.216.203.194/apiv1/categories/${id}`;
         fetch(url, {
             method: 'GET',
             headers: {
@@ -75,7 +75,7 @@ export class CategoryForm extends Component {
     }
 
     _saveRegiser(data) {
-        const url = 'http://pgii.test/apiv1/categories';
+        const url = 'http://34.216.203.194/apiv1/categories';
         fetch(url, {
             method: 'POST',
             body: JSON.stringify(data),
@@ -87,7 +87,7 @@ export class CategoryForm extends Component {
     }
 
     _editRegister(data, register_id) {
-        const url = `http://pgii.test/apiv1/categories/${register_id}`;
+        const url = `http://34.216.203.194/apiv1/categories/${register_id}`;
         fetch(url, {
             method: 'PUT',
             body: JSON.stringify(data),

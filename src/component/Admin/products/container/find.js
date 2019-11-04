@@ -42,7 +42,7 @@ class FindProduct extends Component {
     }
 
     _searchProduct = (data) => {
-        const url = 'http://pgii.test/apiv1/product/search';
+        const url = 'http://34.216.203.194/apiv1/product/search';
         fetch(url, {
             method: 'POST',
             body: JSON.stringify(data),

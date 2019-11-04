@@ -19,7 +19,7 @@ export class CategoryDelete extends Component {
     }
 
     _getRegisterById = (id) => {
-        const url = `http://pgii.test/apiv1/categories/${id}`;
+        const url = `http://34.216.203.194/apiv1/categories/${id}`;
         fetch(url, {
             method: 'GET',
             headers: {
@@ -43,7 +43,7 @@ export class CategoryDelete extends Component {
     }
 
     _deleteRegister(id) {
-        const url = `http://pgii.test/apiv1/categories/${id}`;
+        const url = `http://34.216.203.194/apiv1/categories/${id}`;
         fetch(url, {
             method: 'DELETE',
             headers: {

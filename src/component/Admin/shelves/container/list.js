@@ -12,7 +12,7 @@ export class RackList extends Component {
     }
 
     componentDidMount() {
-        const url = 'http://pgii.test/apiv1/shelves';
+        const url = 'http://34.216.203.194/apiv1/shelves';
         fetch(url, {
             method: 'GET',
             headers: {

@@ -12,7 +12,7 @@ export class CategoryList extends Component {
     }
 
     componentDidMount() {
-        const url = 'http://pgii.test/apiv1/categories';
+        const url = 'http://34.216.203.194/apiv1/categories';
         fetch(url, {
             method: 'GET',
             headers: {
